@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import AddNew from "./AddNew";
 import closeSvgIcon from ".././img/close.svg";
+import { Input, TextField } from "@mui/material";
 
 const ColumnCards = () => {
   const [boards, setBoards] = useState(
@@ -89,7 +90,7 @@ const ColumnCards = () => {
     else{
         inputArea.current.style.background = 'rgb(254, 45, 0)'
         await timeout(500);
-        inputArea.current.style.background = 'rgb(255, 2555, 255)'
+        inputArea.current.style.background = 'none'
         console.log('ошибка')
     }
     
@@ -168,6 +169,8 @@ const onKeyDown = (e) => {
     console.log("изменение");
   }, [checker]);
 
+//   console.log(inputArea.current)
+
 
   useEffect(() => {
     localStorage.setItem('boards', JSON.stringify(boards))
@@ -193,13 +196,19 @@ const onKeyDown = (e) => {
     <div>
       {/* <AddNew/> */}
       <div className="addNewWrap">
+      {/* <Input placeholder="Placeholder" inputProps={ariaLabel} />
+      <Input/> */}
         <input
             ref={inputArea}
             onKeyDown={onKeyDown}
-          value={textTask}
-          onChange={(event) => setTextTask(event.target.value)}
-          type="text"
-          placeholder="input task"
+            value={textTask}
+            onChange={(event) => setTextTask(event.target.value)}
+            placeholder="input task"
+            
+            // inputProps={ariaLabel}
+            // color="secondary"
+            // label="Filled success"
+            // label="Outlined secondary"
         />
         <button
           onClick={addNewTask}
