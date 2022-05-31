@@ -1,38 +1,130 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
+  color: #61DAFB;
+}
+
+body{
+  background-color: #282c34;
+}
+.JustCards {
+  /* width: 100vw; */
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgb(30, 26, 22);
+
+}
+.card{
+  width: 200px;
+  height: 300px;
+  border-radius: 15px;
+  border: 5px solid rgb(97, 218, 251);
+  margin: 10px;
+  cursor: grab;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.app{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+.board{
+  /* min-width: 300px; */
+  /* max-width: 500px; */
+  width: 300px;
+  /* width: ; */
+  min-height: 400px;
+  max-height: 700px;
+  overflow-y: scroll;
+  height: fit-content;
+  border: 5px solid rgb(97, 218, 251);
+  padding: 20px 10px;
+  border-radius: 15px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  scrollbar-width: none;
+}
+.board::-webkit-scrollbar {
+  display: none;
+}
+.board__title{
+  font-size: 21px;
+  font-weight: 700;
+}
+.item{
+  width: 100%;
+  word-break: break-all;
+  border: 2px solid rgb(97, 218, 251);
+  padding: 10px;
+  border-radius: 6px;
+  margin: 5px 0;
+  cursor: grab;
+  background: rgba(97, 218, 251, 0.10);
+  padding-right: 35px;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+.item img{
+  position: absolute;
+  width: 15px;
+  top: 12px;
+  /* bottom: 0; */
+  right: 12px;
+}
+.addNewWrap{
+  padding: 20px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.addNewWrap input{
+  color: black;
+  padding: 10px;
+}
+.addNewWrap button{
+  color: black;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.howMuchLeft{
+  height: 50px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.howMuchLeft button{
+  color: black;
+  padding: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.filterLeftWrap{
+  width: 200px;
+  background: rgb(0, 0, 0);
+  height: 20px;
+  position: relative;
+  margin: 0 auto;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filterLeft{
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  background: rgb(106, 252, 10);
+}
+.filterLeftOrange{
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  background: rgba(107, 252, 10, 0.5);
+  /* background: rgb(230, 187, 0); */
 }
